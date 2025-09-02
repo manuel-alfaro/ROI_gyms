@@ -493,5 +493,661 @@
         .reddot-logo { height: 75px; width: auto; display: block; }
         footer p { font-weight: var(--font-weight-light); margin-bottom: 0; color: var(--color-grey-lightest); }
         .footer-social-icons { margin-top: 1em; }
-        .footer-social-icons a { color: var(--color-grey-lightest); margin: 0 10px; font-size: 1.5
+        .footer-social-icons a { color: var(--color-grey-lightest); margin: 0 10px; font-size: 1.5rem; transition: color 0.3s ease; }
+        .footer-social-icons a:hover { color: var(--color-brand-accent); }
+        
+        @media(max-width:992px){
+           .header-inner-container { justify-content: center; }
+        }
+        @media(max-width:768px){
+            .hero-headline{font-size:1.8rem;text-align:left;} 
+            .reports-section {padding: 60px 20px;}
+            .footer-logo-link { display: none; }
+            .report-modal-content.report-view { grid-template-columns: 1fr; }
+            .story-card { flex-basis: 80vw; }
+            .roi-input-groups { grid-template-columns: 1fr; }
+            .roi-results { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media(max-width:480px){
+            .hero-headline{font-size:1.5rem; height: auto;}
+            .story-card { flex-basis: 90vw; }
+            .report-modal-content.reference-view { padding: 20px; }
+            .graph-axis-label { font-size: 10px; }
+            .graph-category-label { font-size: 12px; }
+            .roi-results { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner-container">
+            <div class="logo-area">
+                <a href="../index.html" class="logo">
+                    <img src="https://storage.googleapis.com/intro_alphatek/logo.png" alt="Alphatek Logo" class="header-logo-img">
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <span class="site-tagline">Designed in Norway</span>
+
+    <main class="scrollable-content">
+        <section class="hero-section">
+            <div class="hero-video-bg">
+                <video autoplay muted loop playsinline id="hero-video">
+                    <source src="https://storage.googleapis.com/intro_alphatek/videoer/9MB_Alphatek_GYM.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="hero-content">
+                <h1 class="hero-headline">
+                    <span class="static-text">Your Gym's Guide to Return on Investment:</span>
+                    <div class="word-rotator-wrapper">
+                        <div class="word-rotator">
+                            <span>Higher Client Retention.</span>
+                            <span>Increased PT Revenue.</span>
+                            <span>A Healthier Business.</span>
+                            <span>Higher Client Retention.</span>
+                        </div>
+                    </div>
+                </h1>
+            </div>
+             <div class="scroll-indicator">
+                <span></span>
+                <span></span>
+            </div>
+        </section>
+
+        <section class="upgrade-section">
+            <div class="container">
+                <h2 class="upgrade-title" id="upgrade-title"></h2>
+            </div>
+        </section>
+
+        <div class="dark-parallax-wrapper">
+            <section id="reports" class="reports-section">
+                <div class="container reports-title-container">
+                    <h2>The Report Catalog: New Revenue Streams for Your Gym</h2>
+                </div>
+                <!-- NEW REPORT CATALOG GRID -->
+                <div class="report-catalog-grid">
+                     <!-- PT Reports -->
+                    <div class="report-catalog-card" data-report-id="basic-pt" data-price-min="300" data-price-max="500" data-duration-min="10" data-duration-max="30">
+                        <img src="https://storage.googleapis.com/intro_alphatek/reports/PT%20basic.png" alt="Basic PT Report">
+                        <h3>Basic PT</h3>
+                        <div class="target-audience"><i class="fas fa-user"></i><span>For the fitness newcomer.</span></div>
+                        <p class="report-description">A fun, motivating introduction to tracking progress with simple, effective tests.<em>Est. duration: 10-30 min</em></p>
+                        <div class="report-price">300 - 500,- NOK</div>
+                    </div>
+                    <div class="report-catalog-card" data-report-id="intermediate-pt" data-price-min="300" data-price-max="500" data-duration-min="10" data-duration-max="30">
+                        <img src="https://storage.googleapis.com/intro_alphatek/reports/PT%20inter.png" alt="Intermediate PT Report">
+                        <h3>Intermediate PT</h3>
+                        <div class="target-audience"><i class="fas fa-user"></i><span>For the regular gym member.</span></div>
+                        <p class="report-description">A more thorough assessment of lower and upper body strength for consistent members.<em>Est. duration: 10-30 min</em></p>
+                        <div class="report-price">300 - 500,- NOK</div>
+                    </div>
+                    <div class="report-catalog-card" data-report-id="advanced-pt" data-price-min="300" data-price-max="500" data-duration-min="10" data-duration-max="30">
+                        <img src="https://storage.googleapis.com/intro_alphatek/reports/PT%20advanced.png" alt="Advanced PT Report">
+                        <h3>Advanced PT</h3>
+                        <div class="target-audience"><i class="fas fa-user"></i><span>For the experienced enthusiast.</span></div>
+                        <p class="report-description">Provides specific strength and function testing, including 1-RM estimation.<em>Est. duration: 10-30 min</em></p>
+                        <div class="report-price">300 - 500,- NOK</div>
+                    </div>
+                    
+                    <!-- Senior Report -->
+                     <div class="report-catalog-card" data-report-id="senior-wellness" data-price-min="500" data-price-max="900" data-duration-min="30" data-duration-max="40">
+                        <img src="https://storage.googleapis.com/intro_alphatek/reports/senior%20raport.png" alt="Senior Wellness Report">
+                        <h3>Senior Wellness</h3>
+                        <div class="target-audience"><i class="fas fa-user"></i><span>For the active senior (60+).</span></div>
+                        <p class="report-description">Assesses fall risk by testing balance, strength, and function to maintain independence.<em>Est. duration: 30-40 min</em></p>
+                        <div class="report-price">500 - 900,- NOK</div>
+                    </div>
+
+                    <!-- Performance Report -->
+                    <div class="report-catalog-card" data-report-id="performance" data-price-min="300" data-price-max="500" data-duration-min="10" data-duration-max="15">
+                        <img src="https://storage.googleapis.com/intro_alphatek/reports/Handball.png" alt="Performance Report">
+                        <h3>Performance Report</h3>
+                        <div class="target-audience"><i class="fas fa-user"></i><span>For any athlete in any sport.</span></div>
+                        <p class="report-description">Measures explosive power, reactivity, and maximal strength to boost performance.<em>Est. duration: 10-15 min</em></p>
+                        <div class="report-price">300 - 500,- NOK</div>
+                    </div>
+                    
+                    <!-- Baseline Screenings -->
+                    <div class="report-catalog-card" data-report-id="baseline-screening-running" data-price-min="500" data-price-max="900" data-duration-min="10" data-duration-max="20">
+                        <img src="https://storage.googleapis.com/intro_alphatek/reports/Return%20to%20play.png" alt="Baseline Screening">
+                        <h3>Baseline Screening</h3>
+                        <div class="target-audience"><i class="fas fa-user"></i><span>For runners & recreational athletes.</span></div>
+                        <p class="report-description">Establish a performance baseline and collect reference data in case of injury.<em>Est. duration: 10-20 min</em></p>
+                        <a class="report-reference-link" data-reference="running">View Elite Athlete Reference Values</a>
+                        <div class="report-price">500 - 900,- NOK</div>
+                    </div>
+
+                    <!-- NEW Return Safe to Run -->
+                    <div class="report-catalog-card" data-report-id="return-safe-to-run" data-price-min="500" data-price-max="900" data-duration-min="10" data-duration-max="20">
+                        <img src="https://storage.googleapis.com/intro_alphatek/reports/Return%20to%20play.png" alt="Return Safe to Run">
+                        <h3>Return Safe to Run</h3>
+                        <div class="target-audience"><i class="fas fa-user"></i><span>For Runners Post-Injury</span></div>
+                        <p class="report-description">A specific protocol to ensure a safe and effective return to running after an injury period.<em>Est. duration: 10-20 min</em></p>
+                        <a class="report-reference-link" data-reference="running">View Elite Athlete Reference Values</a>
+                        <div class="report-price">500 - 900,- NOK</div>
+                    </div>
+
+                     <div class="report-catalog-card" data-report-id="shoulder-baseline" data-price-min="700" data-price-max="1200" data-duration-min="30" data-duration-max="40">
+                        <img src="https://storage.googleapis.com/intro_alphatek/reports/shoulder.png" alt="Shoulder Baseline Screening">
+                        <h3>Shoulder Baseline Screening</h3>
+                        <div class="target-audience"><i class="fas fa-user"></i><span>For new upper-body programs.</span></div>
+                        <p class="report-description">Maps shoulder strength and symmetry to build a safe and effective training plan.<em>Est. duration: 30-40 min</em></p>
+                        <div class="report-price">700 - 1200,- NOK</div>
+                    </div>
+
+                    <!-- General Return to... Reports -->
+                    <div class="report-catalog-card" data-report-id="return-to-activity-running" data-price-min="500" data-price-max="900" data-duration-min="10" data-duration-max="20">
+                        <img src="https://storage.googleapis.com/intro_alphatek/reports/Return%20to%20play.png" alt="Return to Activity Report">
+                        <h3>Return to Activity</h3>
+                        <div class="target-audience"><i class="fas fa-user"></i><span>For recreational athletes.</span></div>
+                        <p class="report-description">Assesses readiness for a confident return to any activity after a break or injury.<em>Est. duration: 10-20 min</em></p>
+                        <div class="report-price">500 - 900,- NOK</div>
+                    </div>
+                    <div class="report-catalog-card" data-report-id="return-to-sport-running" data-price-min="500" data-price-max="900" data-duration-min="10" data-duration-max="20">
+                        <img src="https://storage.googleapis.com/intro_alphatek/reports/Return%20to%20play.png" alt="Return to Sport Report">
+                        <h3>Return to Sport</h3>
+                        <div class="target-audience"><i class="fas fa-user"></i><span>For athletes returning to a sport.</span></div>
+                        <p class="report-description">A comprehensive evaluation for a safe return to a specific sport.<em>Est. duration: 10-20 min</em></p>
+                        <div class="report-price">500 - 900,- NOK</div>
+                    </div>
+                     <div class="report-catalog-card" data-report-id="return-to-play-running" data-price-min="500" data-price-max="900" data-duration-min="10" data-duration-max="20">
+                        <img src="https://storage.googleapis.com/intro_alphatek/reports/Return%20to%20play.png" alt="Return to Play Report">
+                        <h3>Return to Play</h3>
+                        <div class="target-audience"><i class="fas fa-user"></i><span>For competitive athletes.</span></div>
+                        <p class="report-description">Ensures athletes are prepared for the demands of 100% performance level.<em>Est. duration: 10-20 min</em></p>
+                        <div class="report-price">500 - 900,- NOK</div>
+                    </div>
+                    
+                    <!-- Shoulder Reports -->
+                     <div class="report-catalog-card" data-report-id="shoulder-screening" data-price-min="700" data-price-max="1200" data-duration-min="30" data-duration-max="40">
+                        <img src="https://storage.googleapis.com/intro_alphatek/reports/shoulder.png" alt="Shoulder Screening Report">
+                        <h3>Shoulder: Return to Activity</h3>
+                        <div class="target-audience"><i class="fas fa-user"></i><span>For general overhead activities.</span></div>
+                        <p class="report-description">Ensures the shoulder is ready for regular loading in daily life and non-pro sports.<em>Est. duration: 30-40 min</em></p>
+                        <div class="report-price">700 - 1200,- NOK</div>
+                    </div>
+                     <div class="report-catalog-card" data-report-id="shoulder-return-sport" data-price-min="700" data-price-max="1200" data-duration-min="30" data-duration-max="40">
+                        <img src="https://storage.googleapis.com/intro_alphatek/reports/shoulder.png" alt="Shoulder Return to Sport Report">
+                        <h3>Shoulder: Return to Sport</h3>
+                        <div class="target-audience"><i class="fas fa-user"></i><span>For overhead athletes.</span></div>
+                        <p class="report-description">A specific protocol to assess readiness for demanding overhead sports and prevent re-injury.<em>Est. duration: 30-40 min</em></p>
+                        <div class="report-price">700 - 1200,- NOK</div>
+                    </div>
+                     <div class="report-catalog-card" data-report-id="shoulder-return-performance" data-price-min="700" data-price-max="1200" data-duration-min="30" data-duration-max="40">
+                        <img src="https://storage.googleapis.com/intro_alphatek/reports/shoulder.png" alt="Shoulder Return to Performance">
+                        <h3>Shoulder: Return to Performance</h3>
+                        <div class="target-audience"><i class="fas fa-user"></i><span>For elite overhead athletes.</span></div>
+                        <p class="report-description">Provides objective data for return-to-play decisions and peak performance readiness.<em>Est. duration: 30-40 min</em></p>
+                        <div class="report-price">700 - 1200,- NOK</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- NEW TOTAL REVENUE SECTION -->
+        <section class="total-revenue-section">
+            <div class="revenue-container">
+                <h2>Total Potential Revenue</h2>
+                <p>This is an estimate of the revenue generated if you sell one of each report from the catalog.</p>
+                <div class="total-revenue-display">
+                    <h4>Total Package Price</h4>
+                    <p id="total-revenue-range"></p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- UPDATED ROI CALCULATOR SECTION -->
+        <section class="roi-calculator-section">
+            <div class="revenue-container">
+                <h2>Interactive ROI Calculator</h2>
+                <p>Adjust the number of PTs and weekly tests sold per PT to forecast your gym's potential revenue.</p>
+                <div class="roi-input-groups">
+                    <div class="roi-input-group">
+                        <label for="num-pts">Number of Personal Trainers</label>
+                        <input type="number" id="num-pts" value="3" min="0">
+                    </div>
+                    <div class="roi-input-group">
+                        <label for="tests-per-pt">Tests Sold Per PT (Weekly)</label>
+                        <input type="number" id="tests-per-pt" value="2" min="0">
+                    </div>
+                </div>
+                <div class="roi-results">
+                    <div class="roi-result-box">
+                        <h4>Weekly Revenue</h4>
+                        <p id="weekly-revenue"></p>
+                    </div>
+                    <div class="roi-result-box">
+                        <h4>Monthly Revenue</h4>
+                        <p id="monthly-revenue"></p>
+                    </div>
+                    <div class="roi-result-box">
+                        <h4>Annual Revenue</h4>
+                        <p id="annual-revenue"></p>
+                    </div>
+                    <div class="roi-result-box">
+                        <h4>Total Time Used (Weekly)</h4>
+                        <p id="weekly-time-used"></p>
+                    </div>
+                    <div class="roi-result-box">
+                        <h4>Time Used Per PT (Weekly)</h4>
+                        <p id="weekly-time-per-pt"></p>
+                    </div>
+                    <div class="roi-result-box">
+                        <h4>Revenue Per Hour</h4>
+                        <p id="revenue-per-hour"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <div class="report-modal-overlay" id="report-modal-overlay">
+        <div class="report-modal-content report-view">
+            <button class="close-report-modal">&times;</button>
+            <div class="report-modal-image-container">
+                <img id="modal-report-image" src="" alt="Enlarged report">
+            </div>
+            <div class="report-modal-text-container">
+                <h3 id="modal-report-title"></h3>
+                <p id="modal-report-explanation"></p>
+                <h4>Test Battery</h4>
+                <ul id="modal-report-tests"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="report-modal-overlay" id="reference-modal-overlay">
+        <div class="report-modal-content reference-view">
+            <button class="close-report-modal">&times;</button>
+            <div class="report-modal-text-container">
+                <h3>Reference Values: CMJ Height (cm)</h3>
+                <p>Based on data from elite athletes. (Mean = 32.6 cm, SD = 5.4 cm)</p>
+                <div class="reference-graph-container">
+                    <svg viewBox="0 10 500 240" preserveAspectRatio="xMidYMid meet">
+                        <defs>
+                            <clipPath id="curve-clip">
+                                <path d="M 0 200 C 120 200, 180 40, 276 40 S 430 200, 500 200 V 200 H 0 Z"></path>
+                            </clipPath>
+                        </defs>
+                        
+                        <!-- Colored Zones as rects -->
+                        <g clip-path="url(#curve-clip)" opacity="0.7">
+                            <rect x="0" y="0" width="150" height="200" class="graph-zone-poor"></rect>
+                            <rect x="150" y="0" width="120" height="200" class="graph-zone-average"></rect>
+                            <rect x="270" y="0" width="60" height="200" class="graph-zone-good"></rect>
+                            <rect x="330" y="0" width="170" height="200" class="graph-zone-excellent"></rect>
+                        </g>
+
+                        <!-- Curve Outline -->
+                        <path d="M 0 200 C 120 200, 180 40, 276 40 S 430 200, 500 200" class="graph-curve-outline"></path>
+                        
+                        <!-- Axis Line -->
+                        <line x1="0" y1="200" x2="500" y2="200" class="graph-axis-line"></line>
+
+                        <!-- Ticks -->
+                        <line x1="150" y1="200" x2="150" y2="210" class="graph-tick"></line>
+                        <line x1="270" y1="200" x2="270" y2="210" class="graph-tick"></line>
+                        <line x1="330" y1="200" x2="330" y2="210" class="graph-tick"></line>
+
+                        <!-- Axis Labels -->
+                        <text x="150" y="225" class="graph-axis-label">20 cm</text>
+                        <text x="270" y="225" class="graph-axis-label">32 cm</text>
+                        <text x="330" y="225" class="graph-axis-label">38 cm</text>
+
+                        <!-- Category Labels -->
+                        <text x="75" y="30" class="graph-category-label">POOR</text>
+                        <text x="210" y="30" class="graph-category-label">AVERAGE</text>
+                        <text x="300" y="30" class="graph-category-label">GOOD</text>
+                        <text x="415" y="30" class="graph-category-label">EXCELLENT</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <a href="#" class="footer-logo-link" aria-label="Red Dot Design Award">
+             <img src="https://storage.googleapis.com/intro_alphatek/RedDot%20logo.png" alt="Red Dot Design Award Winner" class="reddot-logo">
+        </a>
+        <div class="container">
+            <p>© 2025 Alphatek. All rights reserved.</p>
+            <div class="footer-social-icons">
+                <a href="https://www.instagram.com/alphatekofficial" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@AlphatekOfficial" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const reportData = {
+            'performance': {
+                title: 'Performance Report',
+                explanation: "This battery is designed to measure explosive power, reactivity, and maximal strength, crucial metrics for improving on-court performance, jump height, and sprint speed. It's intended for any athlete in any sport.",
+                tests: ['IMTP', 'Countermovement Jump', 'Reactive Strength Index', 'Repetitive CMJ', 'Lateral Stability']
+            },
+            'advanced-pt': {
+                title: 'Advanced PT Report',
+                explanation: 'Similar to Basic and Intermediate PT, but for people with considerable training experience, this report complements the Intermediate PT. It provides more specific strength and function testing, as well as 1-RM estimation.',
+                tests: ['Double Leg CMJ', 'Single Leg CMJ (Left/Right)', 'Force-Velocity Profile', 'IMTP']
+            },
+            'basic-pt': {
+                title: 'Basic PT Report',
+                explanation: 'For beginners, a fun and easy way to provide motivation with simple tests meant to track progress at the start of their training period. The test is designed to work with any strength training program, which will show progression in these tests.',
+                tests: ['Isometric Mid-thigh Pull', 'Jump for lower body strength and function', 'Balance test (right and left leg)']
+            },
+            'intermediate-pt': {
+                title: 'Intermediate PT Report',
+                explanation: 'Aimed at people who have been training at the gym for a while. This report measures strength in the lower and upper body more thoroughly.',
+                tests: ['Balance for muscular endurance', 'Isopull', 'Static Pushups Row', 'Squat with 70% of bodyweight']
+            },
+            'senior-wellness': {
+                title: 'Senior Wellness Report',
+                explanation: 'Intended for people over 60, its main focus is to test key characteristics to assess fall risk. This test measures balance, strength, and function, three crucial abilities to stay safe and avoid falls. Training these abilities has been shown to help the elderly maintain their physical independence. Your result is compared with others aged 65 to 83.',
+                tests: ['4 Balance Tests (Feet together, One foot, etc.)', '3 Function Tests (Jump, Squat Depth/Speed)', '4 Strength Tests (Pushups, IMTP, etc.)']
+            },
+            'return-to-activity-running': {
+                title: 'Return to Activity',
+                explanation: 'For recreational athletes looking to return to any physical activity. This protocol assesses fundamental strength and stability for a safe and confident return.',
+                tests: ['Countermovement Jump (CMJ)', 'Single-Leg CMJ', 'Reactive Strength Index (RSI)', 'Drop Jump', 'Lateral Stability']
+            },
+            'return-to-sport-running': {
+                title: 'Return to Sport',
+                explanation: 'For athletes with the goal of returning to a specific sport. This comprehensive evaluation ensures they are ready for the demands of their sport, minimizing re-injury risk.',
+                tests: ['Countermovement Jump (CMJ)', 'Single-Leg CMJ', 'Reactive Strength Index (RSI)', 'Drop Jump', 'Lateral Stability']
+            },
+            'return-to-play-running': {
+                title: 'Return to Play',
+                explanation: 'For athletes aiming to return to a 100% performance level. This protocol focuses on dynamic, high-level metrics to ensure they are fully prepared for competition.',
+                tests: ['Countermovement Jump (CMJ)', 'Single-Leg CMJ', 'Reactive Strength Index (RSI)', 'Drop Jump', 'Lateral Stability']
+            },
+            'baseline-screening-running': {
+                title: 'Baseline Screening',
+                explanation: 'For runners and recreational athletes. Establishes a performance baseline to identify strengths and weaknesses, serving as crucial reference data in case of future injury.',
+                tests: ['Countermovement Jump (CMJ)', 'Single-Leg CMJ', 'Reactive Strength Index (RSI)', 'Drop Jump', 'Lateral Stability']
+            },
+             'return-safe-to-run': {
+                title: 'Return Safe to Run',
+                explanation: 'A specific protocol for runners after an injury. Ensures a safe and effective return to running by analyzing key strength and stability metrics.',
+                tests: ['Countermovement Jump (CMJ)', 'Single-Leg CMJ', 'Reactive Strength Index (RSI)', 'Drop Jump', 'Lateral Stability']
+            },
+            'shoulder-screening': {
+                title: 'Shoulder: Return to Activity',
+                explanation: 'The ASH test is a reliable method for assessing isometric shoulder strength, ideal for those returning to daily activities or non-professional sports involving overhead movements. It helps ensure the shoulder is ready for regular loading.',
+                tests: ['Isometric Strength in Abduction (Y-Position)', 'Isometric Strength in Horizontal Abduction (T-Position)', 'External Rotation Strength', 'Internal Rotation Strength']
+            },
+             'shoulder-baseline': {
+                title: 'Shoulder Baseline Screening',
+                explanation: 'For anyone starting a new upper-body strength program. This test maps strength, symmetry, and weaknesses in the shoulder complex to build a safe and effective training plan from the ground up.',
+                tests: ['Isometric Strength in Abduction (Y-Position)', 'Isometric Strength in Horizontal Abduction (T-Position)', 'External Rotation Strength', 'Internal Rotation Strength']
+            },
+             'shoulder-return-performance': {
+                title: 'Shoulder: Return to Performance',
+                explanation: 'Crucial for overhead athletes (handball, swimming, volleyball) post-injury. This screening monitors rehabilitation progress and provides objective data for return-to-play decisions, ensuring peak performance readiness.',
+                tests: ['Isometric Strength in Abduction (Y-Position)', 'Isometric Strength in Horizontal Abduction (T-Position)', 'External Rotation Strength', 'Internal Rotation Strength']
+            },
+             'shoulder-return-sport': {
+                title: 'Shoulder: Return to Sport',
+                explanation: 'A specific protocol to assess readiness for returning to demanding overhead sports. It identifies any lingering weaknesses in scapular stabilizers and glenoheral muscles to prevent re-injury.',
+                tests: ['Isometric Strength in Abduction (Y-Position)', 'Isometric Strength in Horizontal Abduction (T-Position)', 'External Rotation Strength', 'Internal Rotation Strength']
+            }
+        };
+
+        const upgradeTitle = document.getElementById('upgrade-title');
+        
+        function typeWords(element, wordsArray, speed) {
+            let i = 0;
+            element.innerHTML = '';
+            element.classList.add('typing-cursor');
+
+            function type() {
+                if (i < wordsArray.length) {
+                    element.innerHTML += wordsArray[i];
+                    i++;
+                    setTimeout(type, speed);
+                } else {
+                    element.classList.remove('typing-cursor');
+                }
+            }
+            type();
+        }
+
+        const upgradeTitleObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    const words = [
+                        'Alphatek gives personal trainers the tools needed to <b>boost sales</b> and <b>keep the members</b> at the gym'
+                    ];
+                    typeWords(upgradeTitle, words, 60);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.8 });
+
+
+        if (upgradeTitle) {
+            upgradeTitleObserver.observe(upgradeTitle);
+        }
+
+        // --- MODAL LOGIC ---
+        const reportModalOverlay = document.getElementById('report-modal-overlay');
+        const reportCards = document.querySelectorAll('.report-catalog-card'); 
+        const modalImage = document.getElementById('modal-report-image');
+        const modalTitle = document.getElementById('modal-report-title');
+        const modalExplanation = document.getElementById('modal-report-explanation');
+        const modalTestList = document.getElementById('modal-report-tests');
+        
+        const referenceModalOverlay = document.getElementById('reference-modal-overlay');
+        const referenceLinks = document.querySelectorAll('.report-reference-link');
+
+        function openReportModal(reportId) {
+            const data = reportData[reportId];
+            if (!data) return;
+
+            const clickedCard = document.querySelector(`.report-catalog-card[data-report-id="${reportId}"]`);
+            const imgSrc = clickedCard.querySelector('img').src;
+
+            modalImage.src = imgSrc;
+            modalImage.alt = data.title;
+            modalTitle.textContent = data.title;
+            modalExplanation.textContent = data.explanation;
+
+            modalTestList.innerHTML = '';
+            data.tests.forEach(test => {
+                const li = document.createElement('li');
+                li.textContent = test;
+                modalTestList.appendChild(li);
+            });
+
+            document.body.classList.add('modal-open');
+            reportModalOverlay.classList.add('is-visible');
+        }
+
+        function closeReportModal() {
+            document.body.classList.remove('modal-open');
+            reportModalOverlay.classList.remove('is-visible');
+        }
+
+        function openReferenceModal() {
+            document.body.classList.add('modal-open');
+            referenceModalOverlay.classList.add('is-visible');
+        }
+
+        function closeReferenceModal() {
+            document.body.classList.remove('modal-open');
+            referenceModalOverlay.classList.remove('is-visible');
+        }
+
+        reportCards.forEach(card => {
+            card.addEventListener('click', (e) => {
+                 // Check if the clicked element is not the reference link
+                if (!e.target.classList.contains('report-reference-link')) {
+                    const reportId = card.dataset.reportId;
+                    openReportModal(reportId);
+                }
+            });
+        });
+
+        referenceLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation(); // Prevents the card's click listener
+                openReferenceModal();
+            });
+        });
+        
+        // Close modal buttons
+        reportModalOverlay.querySelector('.close-report-modal').addEventListener('click', closeReportModal);
+        referenceModalOverlay.querySelector('.close-report-modal').addEventListener('click', closeReferenceModal);
+
+        // Close modals by clicking on overlay
+        reportModalOverlay.addEventListener('click', (e) => {
+            if (e.target === reportModalOverlay) closeReportModal();
+        });
+        referenceModalOverlay.addEventListener('click', (e) => {
+            if (e.target === referenceModalOverlay) closeReferenceModal();
+        });
+
+        // --- ROI & REVENUE CALCULATOR LOGIC ---
+        const totalRevenueRangeEl = document.getElementById('total-revenue-range');
+        const ptsInput = document.getElementById('num-pts');
+        const testsPerPtInput = document.getElementById('tests-per-pt');
+        const weeklyRevenueEl = document.getElementById('weekly-revenue');
+        const monthlyRevenueEl = document.getElementById('monthly-revenue');
+        const annualRevenueEl = document.getElementById('annual-revenue');
+        const weeklyTimeUsedEl = document.getElementById('weekly-time-used');
+        const weeklyTimePerPtEl = document.getElementById('weekly-time-per-pt');
+        const revenuePerHourEl = document.getElementById('revenue-per-hour');
+        const allReportCards = document.querySelectorAll('.report-catalog-card');
+        const formatCurrency = (value) => new Intl.NumberFormat('nb-NO').format(value);
+
+        function calculateTotalPotential() {
+            let totalMin = 0;
+            let totalMax = 0;
+            allReportCards.forEach(card => {
+                totalMin += parseInt(card.dataset.priceMin);
+                totalMax += parseInt(card.dataset.priceMax);
+            });
+            totalRevenueRangeEl.textContent = `${formatCurrency(totalMin)} - ${formatCurrency(totalMax)},-`;
+        }
+
+        function calculateROI() {
+            const numPTs = parseInt(ptsInput.value) || 0;
+            const testsPerPT = parseInt(testsPerPtInput.value) || 0;
+            const numTests = numPTs * testsPerPT;
+            
+            let totalMinPrice = 0;
+            let totalMaxPrice = 0;
+            let totalMinDuration = 0;
+            let totalMaxDuration = 0;
+            
+            allReportCards.forEach(card => {
+                totalMinPrice += parseInt(card.dataset.priceMin);
+                totalMaxPrice += parseInt(card.dataset.priceMax);
+                totalMinDuration += parseInt(card.dataset.durationMin);
+                totalMaxDuration += parseInt(card.dataset.durationMax);
+            });
+
+            const avgMinPrice = totalMinPrice / allReportCards.length;
+            const avgMaxPrice = totalMaxPrice / allReportCards.length;
+            const avgMinDuration = totalMinDuration / allReportCards.length;
+            const avgMaxDuration = totalMaxDuration / allReportCards.length;
+
+            const weeklyMin = Math.round(numTests * avgMinPrice);
+            const weeklyMax = Math.round(numTests * avgMaxPrice);
+            const monthlyMin = weeklyMin * 4;
+            const monthlyMax = weeklyMax * 4;
+            const annualMin = monthlyMin * 12;
+            const annualMax = monthlyMax * 12;
+
+            const weeklyTimeMinHours = (numTests * avgMinDuration) / 60;
+            const weeklyTimeMaxHours = (numTests * avgMaxDuration) / 60;
+            
+            const weeklyTimePerPTMin = numPTs > 0 ? weeklyTimeMinHours / numPTs : 0;
+            const weeklyTimePerPTMax = numPTs > 0 ? weeklyTimeMaxHours / numPTs : 0;
+
+            const revenuePerHourMin = weeklyTimeMinHours > 0 ? weeklyMin / weeklyTimeMinHours : 0;
+            const revenuePerHourMax = weeklyTimeMaxHours > 0 ? weeklyMax / weeklyTimeMaxHours : 0;
+
+            weeklyRevenueEl.textContent = `${formatCurrency(weeklyMin)} - ${formatCurrency(weeklyMax)},-`;
+            monthlyRevenueEl.textContent = `${formatCurrency(monthlyMin)} - ${formatCurrency(monthlyMax)},-`;
+            annualRevenueEl.textContent = `${formatCurrency(annualMin)} - ${formatCurrency(annualMax)},-`;
+            weeklyTimeUsedEl.textContent = `${weeklyTimeMinHours.toFixed(1)} - ${weeklyTimeMaxHours.toFixed(1)} hours`;
+            weeklyTimePerPtEl.textContent = `${weeklyTimePerPTMin.toFixed(1)} - ${weeklyTimePerPTMax.toFixed(1)} hours`;
+            revenuePerHourEl.textContent = `${formatCurrency(Math.round(revenuePerHourMin))} - ${formatCurrency(Math.round(revenuePerHourMax))},-`;
+        }
+
+        if(ptsInput && testsPerPtInput) {
+            ptsInput.addEventListener('input', calculateROI);
+            testsPerPtInput.addEventListener('input', calculateROI);
+            // Initial calculations on load
+            calculateTotalPotential();
+            calculateROI();
+        }
+
+        // --- END ROI LOGIC ---
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "Escape") {
+                if (reportModalOverlay.classList.contains('is-visible')) {
+                    closeReportModal();
+                }
+                if (referenceModalOverlay.classList.contains('is-visible')) {
+                    closeReferenceModal();
+                }
+            }
+        });
+
+
+        function slowScrollTo(targetSelector, duration) {
+            const target = document.querySelector(targetSelector);
+            if (!target) return;
+
+            const targetPosition = target.getBoundingClientRect().top;
+            const startPosition = window.pageYOffset;
+            let startTime = null;
+
+            function animation(currentTime) {
+                if (startTime === null) startTime = currentTime;
+                const timeElapsed = currentTime - startTime;
+                const run = ease(timeElapsed, startPosition, targetPosition, duration);
+                window.scrollTo(0, run);
+                if (timeElapsed < duration) requestAnimationFrame(animation);
+            }
+
+            function ease(t, b, c, d) {
+                t /= d / 2;
+                if (t < 1) return c / 2 * t * t + b;
+                t--;
+                return -c / 2 * (t * (t - 2) - 1) + b;
+            };
+
+            requestAnimationFrame(animation);
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                
+                if (targetId !== '#' && document.querySelector(targetId)) {
+                    e.preventDefault();
+                    slowScrollTo(targetId, 1500); 
+                }
+            });
+        });
+
+    });
+    </script>
+
+</body>
+</html>
 
