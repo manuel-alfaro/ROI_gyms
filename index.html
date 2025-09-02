@@ -365,10 +365,10 @@
             height: auto;
             font-family: var(--font-primary);
         }
-        .graph-zone-poor { fill: #d9534f; }
-        .graph-zone-average { fill: #f0ad4e; }
-        .graph-zone-good { fill: #5cb85c; }
-        .graph-zone-excellent { fill: #2e8b57; }
+         .graph-zone-poor { fill: #d9534f; }
+         .graph-zone-average { fill: #f0ad4e; }
+         .graph-zone-good { fill: #5cb85c; }
+         .graph-zone-excellent { fill: #2e8b57; }
         .graph-curve-outline {
             fill: none;
             stroke: var(--color-grey-lightest);
@@ -634,34 +634,42 @@
                 <h3>Reference Values: CMJ Height (cm)</h3>
                 <p>Based on data from elite athletes. (Mean = 32.6 cm, SD = 5.4 cm)</p>
                 <div class="reference-graph-container">
-                    <svg viewBox="0 10 500 220" preserveAspectRatio="xMidYMid meet">
-                        <!-- Colored Zones -->
-                        <path d="M 50 200 L 50 165 C 100 160, 100 80, 153 80 L 153 200 Z" class="graph-zone-poor"></path>
-                        <path d="M 153 200 L 153 80 C 200 80, 200 40, 250 40 C 300 40, 300 80, 347 80 L 347 200 Z" class="graph-zone-average"></path>
-                        <path d="M 347 200 L 347 80 C 400 80, 400 160, 450 165 L 450 200 Z" class="graph-zone-good"></path>
-                        <path d="M 450 200 L 450 165 C 475 170, 475 180, 500 180 L 500 200 Z" class="graph-zone-excellent"></path>
+                    <svg viewBox="0 10 500 240" preserveAspectRatio="xMidYMid meet">
+                        <defs>
+                            <clipPath id="curve-clip">
+                                <path d="M 0 200 C 120 200, 180 40, 276 40 S 430 200, 500 200 V 200 H 0 Z"></path>
+                            </clipPath>
+                        </defs>
+                        
+                        <!-- Colored Zones as rects -->
+                        <g clip-path="url(#curve-clip)" opacity="0.7">
+                            <rect x="0" y="0" width="150" height="200" class="graph-zone-poor"></rect>
+                            <rect x="150" y="0" width="120" height="200" class="graph-zone-average"></rect>
+                            <rect x="270" y="0" width="60" height="200" class="graph-zone-good"></rect>
+                            <rect x="330" y="0" width="170" height="200" class="graph-zone-excellent"></rect>
+                        </g>
 
                         <!-- Curve Outline -->
-                        <path d="M 0 190 C 50 190, 50 165, 50 165 C 100 160, 100 80, 153 80 C 200 80, 200 40, 250 40 C 300 40, 300 80, 347 80 C 400 80, 400 160, 450 165 C 475 170, 475 180, 500 180" class="graph-curve-outline"></path>
+                        <path d="M 0 200 C 120 200, 180 40, 276 40 S 430 200, 500 200" class="graph-curve-outline"></path>
                         
                         <!-- Axis Line -->
                         <line x1="0" y1="200" x2="500" y2="200" class="graph-axis-line"></line>
 
                         <!-- Ticks -->
-                        <line x1="153" y1="200" x2="153" y2="210" class="graph-tick"></line>
-                        <line x1="250" y1="200" x2="250" y2="210" class="graph-tick"></line>
-                        <line x1="347" y1="200" x2="347" y2="210" class="graph-tick"></line>
+                        <line x1="150" y1="200" x2="150" y2="210" class="graph-tick"></line>
+                        <line x1="270" y1="200" x2="270" y2="210" class="graph-tick"></line>
+                        <line x1="330" y1="200" x2="330" y2="210" class="graph-tick"></line>
 
                         <!-- Axis Labels -->
-                        <text x="153" y="225" class="graph-axis-label">27.2 cm</text>
-                        <text x="250" y="225" class="graph-axis-label">32.6 cm</text>
-                        <text x="347" y="225" class="graph-axis-label">38.0 cm</text>
+                        <text x="150" y="225" class="graph-axis-label">20 cm</text>
+                        <text x="270" y="225" class="graph-axis-label">32 cm</text>
+                        <text x="330" y="225" class="graph-axis-label">38 cm</text>
 
                         <!-- Category Labels -->
-                        <text x="101.5" y="70" class="graph-category-label">POOR</text>
-                        <text x="250" y="30" class="graph-category-label">AVERAGE</text>
-                        <text x="398.5" y="70" class="graph-category-label">GOOD</text>
-                        <text x="475" y="155" class="graph-category-label">EXCELLENT</text>
+                        <text x="75" y="70" class="graph-category-label">POOR</text>
+                        <text x="210" y="30" class="graph-category-label">AVERAGE</text>
+                        <text x="300" y="70" class="graph-category-label">GOOD</text>
+                        <text x="415" y="100" class="graph-category-label">EXCELLENT</text>
                     </svg>
                 </div>
             </div>
@@ -939,4 +947,5 @@
 
 </body>
 </html>
+
 
